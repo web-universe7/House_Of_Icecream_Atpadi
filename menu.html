@@ -8,10 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/order.js" defer></script>
 </head>
 <body>
   <main class="menu-document">
-    <a class="menu-back" href="index.html">← Back to home</a>
+    <nav class="menu-entry-navigation" aria-label="Menu navigation">
+      <a href="index.html">Home Page</a>
+      <a href="menu-3.html">Next Page →</a>
+    </nav>
 
     <section class="flavor-sheet" aria-labelledby="menu-title">
       <header class="flavor-heading">
@@ -22,33 +26,27 @@
       <div class="flavor-layout">
         <div class="flavor-list" role="table" aria-label="Ice cream flavors and prices">
           <div class="flavor-columns" role="row">
-            <span role="columnheader">Flavor</span>
+            <span role="columnheader">Flavor / चव</span>
             <span role="columnheader">Small</span>
             <span role="columnheader">Family pack<br>500gm</span>
           </div>
-          <div class="flavor-row" role="row"><span role="cell">Chiku</span><span role="cell">₹60</span><span role="cell">₹360</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Watermelon</span><span role="cell">₹60</span><span role="cell">₹360</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Musk-Watermelon</span><span role="cell">₹50</span><span role="cell">₹250</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Guava Chilli</span><span role="cell">₹60</span><span role="cell">₹360</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Banana Caramel</span><span role="cell">₹50</span><span role="cell">₹300</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Kiwi</span><span role="cell">₹50</span><span role="cell">₹325</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Tender Coconut</span><span role="cell">₹80</span><span role="cell">₹560</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Sitaphal</span><span role="cell">₹60</span><span role="cell">₹360</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Plum</span><span role="cell">₹50</span><span role="cell">₹275</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Strawberry</span><span role="cell">₹50</span><span role="cell">₹320</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Mango</span><span role="cell">₹55</span><span role="cell">₹325</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Mango Vanilla</span><span role="cell">₹55</span><span role="cell">₹325</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Raspberry Vanilla</span><span role="cell">₹60</span><span role="cell">₹360</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Blackcurrant Vanilla</span><span role="cell">₹60</span><span role="cell">₹360</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Mango with Cream</span><span role="cell">₹150</span><span role="cell">—</span></div>
-          <div class="flavor-row" role="row"><span role="cell">Strawberry with Cream</span><span role="cell">₹150</span><span role="cell">—</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Chiku <span class="flavor-marathi" lang="mr">चिकू</span></span><span role="cell">₹60</span><span role="cell">₹360</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Watermelon <span class="flavor-marathi" lang="mr">कलिंगड</span></span><span role="cell">₹60</span><span role="cell">₹360</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Musk-Watermelon <span class="flavor-marathi" lang="mr">खरबूज-कलिंगड</span></span><span role="cell">₹50</span><span role="cell">₹250</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Guava Chilli <span class="flavor-marathi" lang="mr">पेरू-मिरची</span></span><span role="cell">₹60</span><span role="cell">₹360</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Banana Caramel <span class="flavor-marathi" lang="mr">केळी-कॅरॅमल</span></span><span role="cell">₹50</span><span role="cell">₹300</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Kiwi <span class="flavor-marathi" lang="mr">किवी</span></span><span role="cell">₹50</span><span role="cell">₹325</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Tender Coconut <span class="flavor-marathi" lang="mr">कोवळे नारळ</span></span><span role="cell">₹80</span><span role="cell">₹560</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Sitaphal <span class="flavor-marathi" lang="mr">सीताफळ</span></span><span role="cell">₹60</span><span role="cell">₹360</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Plum <span class="flavor-marathi" lang="mr">आलूबुखारा</span></span><span role="cell">₹50</span><span role="cell">₹275</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Strawberry <span class="flavor-marathi" lang="mr">स्ट्रॉबेरी</span></span><span role="cell">₹50</span><span role="cell">₹320</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Mango <span class="flavor-marathi" lang="mr">आंबा</span></span><span role="cell">₹55</span><span role="cell">₹325</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Mango Vanilla <span class="flavor-marathi" lang="mr">आंबा व्हॅनिला</span></span><span role="cell">₹55</span><span role="cell">₹325</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Raspberry Vanilla <span class="flavor-marathi" lang="mr">रास्पबेरी व्हॅनिला</span></span><span role="cell">₹60</span><span role="cell">₹360</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Blackcurrant Vanilla <span class="flavor-marathi" lang="mr">ब्लॅककरंट व्हॅनिला</span></span><span role="cell">₹60</span><span role="cell">₹360</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Mango with Cream <span class="flavor-marathi" lang="mr">क्रीमसह आंबा</span></span><span role="cell">₹150</span><span role="cell">—</span></div>
+          <div class="flavor-row" role="row"><span class="flavor-name" role="cell">Strawberry with Cream <span class="flavor-marathi" lang="mr">क्रीमसह स्ट्रॉबेरी</span></span><span role="cell">₹150</span><span role="cell">—</span></div>
         </div>
-
-        <aside class="flavor-art" aria-label="Ice cream photos">
-          <img src="images/glass1.png" alt="Chocolate ice cream in a glass">
-          <img src="images/yellow_cone.png" alt="Mango ice cream cone">
-          <img src="images/cup3.png" alt="Strawberry ice cream cup">
-        </aside>
       </div>
 
       <p class="menu-note">We make our own ice cream base. All rates are inclusive of GST.</p>
