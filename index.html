@@ -11,12 +11,37 @@
 </head>
 <body>
   <main class="home">
-    <h1 class="brand" aria-label="House of Ice-Cream">
+    <h1 class="brand" aria-label="House of Ice-Cream, Atpadi">
       <span class="line line-1"><span class="big">House</span> of</span>
-      <span class="line line-2">Ice-Cream</span>
+      <span class="line line-2">Ice-Cream Atpadi</span>
     </h1>
 
-    <a class="btn" href="menu.html">View Menu</a>
+    <h2 class="showcase-heading">Top Rated Products — Must Try</h2>
+    <div class="home-showcase">
+      <div class="showcase-box">
+        <div class="showcase-images" aria-hidden="true">
+          <img src="images/green_cone.png" alt="">
+          <img src="images/pink_cone.png" alt="">
+          <img src="images/yellow_cone.png" alt="">
+        </div>
+        <div class="showcase-products">
+          <div class="showcase-item">
+            <span class="showcase-name">Pista Delight</span>
+            <span class="showcase-price">₹60</span>
+          </div>
+          <div class="showcase-item">
+            <span class="showcase-name">Strawberry Scoop</span>
+            <span class="showcase-price">₹55</span>
+          </div>
+          <div class="showcase-item">
+            <span class="showcase-name">Mango Magic</span>
+            <span class="showcase-price">₹60</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn" href="menu.html">View Menu <span class="navigation-marathi" lang="mr">मेनू पहा</span></a>
 
     <div class="treat-marquee" aria-label="Ice cream cones, glasses, and cups">
       <div class="treat-track">
@@ -49,16 +74,31 @@
       <img src="images/shop1.png" alt="House of Ice-Cream shop" class="shop-image">
     </section>
 
+    <div class="contact-message-strip" role="region" aria-label="सोशल मीडिया सूचना">
+      <span lang="mr">आमच्याशी संपर्क साधण्यासाठी WhatsApp आयकॉनवर क्लिक करा.</span>
+      <span lang="mr">नवीन ऑफरसाठी आम्हाला Instagram वर फॉलो करा.</span>
+      <span lang="mr">Google वर तुमचे अमूल्य रेटिंग द्या, जेणेकरून आम्ही तुम्हाला सदैव सर्वोत्तम सेवा देऊ शकू.</span>
+      <span lang="mr">डिजिटल मेनू कार्ड कसे वापरावे हे पाहण्यासाठी YouTube वर क्लिक करा.</span>
+    </div>
+
     <div class="social-icons" role="group" aria-label="Social media icons">
-      <span class="social-icon whatsapp-icon">
-        <img src="images/whatsapp.png" alt="WhatsApp">
-      </span>
-      <span class="social-icon instagram-icon">
+      <a class="social-contact" href="https://wa.me/917558610088" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 7558610088">
+        <span class="social-icon whatsapp-icon" aria-hidden="true">
+          <img src="images/whatsapp.png" alt="">
+        </span>
+      </a>
+      <a class="social-icon instagram-icon" href="https://www.instagram.com/house_of_ice_cream_atpadi?exln=MTM2d2lxbG9vYTNldw==" target="_blank" rel="noopener noreferrer">
         <img src="images/Instagram.png" alt="Instagram">
-      </span>
+      </a>
       <span class="social-icon google-icon">
         <img src="images/google.png" alt="Google">
       </span>
+      <a class="social-icon youtube-icon" href="https://youtube.com/@bytee_nova?si=XXOdDmDfrM8ZX5V7" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" role="img" aria-label="YouTube">
+          <rect x="1" y="4" width="22" height="16" rx="5" fill="#ff0000"></rect>
+          <path d="M10 8.5v7l6-3.5z" fill="#fff"></path>
+        </svg>
+      </a>
     </div>
   </main>
 </body>
