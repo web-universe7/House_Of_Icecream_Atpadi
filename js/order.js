@@ -107,19 +107,51 @@
 
   function createCartLink() {
     if (!main || checkout || document.querySelector("[data-cart-link]")) return;
+    const dock = document.createElement("div");
+    dock.className = "order-cart-dock";
+
+    const hint = document.createElement("span");
+    hint.className = "order-cart-hint";
+    hint.lang = "mr";
+    hint.textContent = "तुम्ही जोडलेले पदार्थ कार्टमध्ये जाऊन ऑर्डर करा";
+
     const link = document.createElement("a");
     link.className = "order-cart-link";
     link.href = "order.html";
     link.dataset.cartLink = "";
     link.setAttribute("aria-label", "View your order");
-    link.append(document.createTextNode("Cart "));
+
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    icon.classList.add("order-cart-icon");
+    icon.setAttribute("viewBox", "0 0 24 24");
+    icon.setAttribute("aria-hidden", "true");
+
+    const trolley = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    trolley.setAttribute("d", "M2.5 3.5h2l2.3 11.2c.2.9 1 1.5 1.9 1.5h9.1c.9 0 1.7-.6 1.9-1.5L22 7H6");
+    icon.append(trolley);
+
+    const firstWheel = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    firstWheel.setAttribute("cx", "9");
+    firstWheel.setAttribute("cy", "20");
+    firstWheel.setAttribute("r", "1.5");
+    icon.append(firstWheel);
+
+    const secondWheel = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    secondWheel.setAttribute("cx", "18");
+    secondWheel.setAttribute("cy", "20");
+    secondWheel.setAttribute("r", "1.5");
+    icon.append(secondWheel);
+
+    link.append(icon, document.createTextNode("Cart "));
 
     const count = document.createElement("span");
     count.className = "order-cart-count";
     count.dataset.cartCount = "";
     count.textContent = "0";
     link.append(count);
-    document.body.append(link);
+
+    dock.append(hint, link);
+    document.body.append(dock);
   }
 
   function addToCart(name, section, option) {
@@ -164,6 +196,18 @@
       price.className = "catalog-price";
       price.textContent = `₹${options[0].price}`;
       actions.append(price);
+    }
+
+    if (row.hasAttribute("data-unavailable")) {
+      const mark = document.createElement("span");
+      mark.className = "unavailable-mark";
+      mark.setAttribute("role", "img");
+      mark.setAttribute("aria-label", "Currently unavailable");
+      mark.title = "Currently unavailable";
+      mark.textContent = "×";
+      actions.append(mark);
+      row.append(actions);
+      return;
     }
 
     const button = document.createElement("button");
