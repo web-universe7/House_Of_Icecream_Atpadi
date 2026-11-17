@@ -1,902 +1,105 @@
-:root {
-  --bg: #f7f1e8;
-  --choc: #4a1f12;
-  --choc-soft: #7a4a3a;
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html, body { height: 100%; }
-
-body {
-  background: url("../images/pink_background.jpg") center/cover no-repeat fixed;
-  color: var(--choc);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- Home ---------- */
-.home {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  padding: 2rem 1.25rem;
-}
-
-.brand {
-  font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-  font-size: clamp(2.8rem, 14vw, 5.5rem);
-}
-.brand .line { display: block; }
-.brand .line-2 { margin-top: 0.05em; }
-.brand .big { font-size: 1.15em; }
-
-.place {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  margin-top: 1.4rem;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.4rem, 6vw, 2rem);
-}
-.rule {
-  display: inline-block;
-  width: clamp(36px, 12vw, 80px);
-  height: 2px;
-  background: var(--choc);
-  border-radius: 2px;
-}
-
-.tagline {
-  margin-top: 0.8rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.15rem, 5vw, 1.6rem);
-}
-
-.btn {
-  margin-top: 2.6rem;
-  display: inline-block;
-  padding: 0.85rem 2.2rem;
-  border: 2px solid var(--choc);
-  border-radius: 999px;
-  color: var(--choc);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.2s, color 0.2s;
-}
-.btn:hover, .btn:focus-visible { background: var(--choc); color: #fff; }
-.btn:focus-visible { outline: 3px solid var(--choc-soft); outline-offset: 3px; }
-
-/* One entrance sequence on load */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.in { opacity: 1; transform: none; }
-
-/* ---------- Menu page ---------- */
-.menu-page { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
-
-.treat-marquee {
-  align-self: stretch;
-  width: auto;
-  margin: 1.5rem -1.25rem 0;
-  overflow: hidden;
-}
-
-.treat-track,
-.treat-group {
-  display: flex;
-  align-items: center;
-  width: max-content;
-}
-
-.treat-track {
-  animation: treat-scroll 32s linear infinite;
-}
-
-.treat-group {
-  flex: 0 0 auto;
-  gap: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.treat-group img {
-  display: block;
-  flex: 0 0 auto;
-  width: clamp(110px, 17vw, 190px);
-  height: clamp(130px, 21vw, 220px);
-  object-fit: contain;
-  background: transparent;
-}
-
-.treat-group img:nth-child(1) { filter: drop-shadow(0 10px 12px rgba(112, 145, 54, 0.42)); }
-.treat-group img:nth-child(2) { filter: drop-shadow(0 10px 12px rgba(126, 87, 155, 0.4)); }
-.treat-group img:nth-child(3) { filter: drop-shadow(0 10px 12px rgba(218, 83, 106, 0.4)); }
-.treat-group img:nth-child(4) { filter: drop-shadow(0 10px 12px rgba(218, 116, 145, 0.42)); }
-.treat-group img:nth-child(5) { filter: drop-shadow(0 10px 12px rgba(111, 63, 39, 0.42)); }
-.treat-group img:nth-child(6) { filter: drop-shadow(0 10px 12px rgba(218, 145, 154, 0.4)); }
-.treat-group img:nth-child(7) { filter: drop-shadow(0 10px 12px rgba(225, 174, 53, 0.45)); }
-.treat-group img:nth-child(8) { filter: drop-shadow(0 10px 12px rgba(132, 78, 47, 0.42)); }
-.treat-group img:nth-child(9) { filter: drop-shadow(0 10px 12px rgba(210, 183, 135, 0.45)); }
-
-@keyframes treat-scroll {
-  to { transform: translateX(-50%); }
-}
-
-.shop-image-wrap {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0.5rem auto 0;
-}
-
-.shop-image {
-  width: 95%;
-  max-width: 760px;
-  height: auto;
-  display: block;
-  border: 8px solid #fff;
-  border-radius: 0;
-  box-shadow: 0 10px 25px rgba(74, 31, 18, 0.18);
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0.75rem auto 0;
-}
-
-.social-icon {
-  display: grid;
-  position: relative;
-  width: 52px;
-  height: 52px;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(74, 31, 18, 0.16);
-  overflow: hidden;
-}
-
-.social-icon img {
-  display: block;
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-
-.whatsapp-icon img,
-.instagram-icon img,
-.google-icon img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.whatsapp-icon img { width: 80px; height: 80px; }
-.instagram-icon img { width: 56px; height: 56px; }
-.google-icon img { width: 66px; height: 66px; }
-
-.menu-head { text-align: center; padding: 1rem 0 1.5rem; }
-.menu-head a { color: inherit; text-decoration: none; }
-.menu-head .title { font-family: var(--font-display); font-weight: 800; font-size: 2rem; line-height: 1.05; }
-.menu-head .sub { font-family: var(--font-display); font-style: italic; margin-top: 0.3rem; color: var(--choc-soft); }
-
-.tabs {
-  position: sticky; top: 0; z-index: 5;
-  display: flex; gap: 0.5rem; overflow-x: auto;
-  padding: 0.7rem 0; background: var(--bg);
-  border-bottom: 1px solid #eadfd9;
-  scrollbar-width: none;
-}
-.tabs::-webkit-scrollbar { display: none; }
-.tab {
-  flex: 0 0 auto;
-  font: 600 0.9rem var(--font-body);
-  color: var(--choc);
-  background: #fff;
-  border: 1.5px solid var(--choc);
-  border-radius: 999px;
-  padding: 0.5rem 1.1rem;
-  cursor: pointer;
-}
-.tab[aria-selected="true"] { background: var(--choc); color: #fff; }
-.tab:focus-visible { outline: 3px solid var(--choc-soft); outline-offset: 2px; }
-
-.items { list-style: none; margin-top: 0.5rem; }
-.item {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-  padding: 1rem 0; border-bottom: 1px dashed #d9c9c1;
-}
-.item .name { font-weight: 600; font-size: 1.05rem; }
-.item .desc { font-size: 0.85rem; color: var(--choc-soft); margin-top: 0.15rem; }
-.item .price {
-  font-family: "Poppins", "Noto Sans", "Segoe UI", "Segoe UI Symbol", Arial, sans-serif;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  font-size: 1.1rem;
-  white-space: nowrap;
-}
-
-.back { display: inline-block; margin-top: 2rem; color: var(--choc); font-weight: 600; text-decoration: none; }
-.back:hover { text-decoration: underline; }
-
-.menu-document {
-  width: min(100% - 2rem, 900px);
-  margin: 0 auto;
-  padding: 1.5rem 0 3rem;
-}
-
-.menu-back {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: var(--choc);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.menu-back:hover { text-decoration: underline; }
-
-.flavor-sheet {
-  padding: clamp(1.25rem, 4vw, 2.5rem);
-  background: rgba(255, 253, 247, 0.9);
-  border: 1px solid rgba(122, 74, 58, 0.18);
-  border-radius: 12px;
-  box-shadow: 0 14px 36px rgba(74, 31, 18, 0.12);
-}
-
-.flavor-heading {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.flavor-heading h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 7vw, 3.5rem);
-  line-height: 1;
-}
-
-.flavor-heading p {
-  margin-top: 0.5rem;
-  color: #8d5360;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.flavor-layout {
-  display: block;
-}
-
-.flavor-list { min-width: 0; }
-
-.flavor-columns,
-.flavor-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 4.2rem 5.2rem;
-  gap: 0.35rem;
-  align-items: center;
-}
-
-.flavor-columns {
-  min-height: 3.4rem;
-  color: var(--choc-soft);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.flavor-columns span:first-child { text-align: left; }
-
-.flavor-row {
-  min-height: 2.35rem;
-  border-bottom: 1px solid rgba(122, 74, 58, 0.16);
-  font-size: 0.88rem;
-}
-
-.flavor-row span:first-child { font-weight: 600; }
-.flavor-row span:not(:first-child) {
-  text-align: center;
-  white-space: nowrap;
-  font-family: "Poppins", "Noto Sans", "Segoe UI", "Segoe UI Symbol", Arial, sans-serif;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-}
-
-.flavor-name {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.flavor-marathi {
-  margin-left: 0.25rem;
-  color: var(--choc-soft);
-  font-family: system-ui, "Noto Sans Devanagari", sans-serif;
-  font-size: 0.9em;
-}
-
-.menu-note {
-  margin-top: 1.5rem;
-  color: var(--choc-soft);
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-.menu-entry-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin: 0 0 0.65rem;
-}
-
-.menu-entry-navigation a,
-.catalog-pagination a {
-  color: var(--choc);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.menu-entry-navigation a {
-  display: inline-flex;
-  min-height: 2rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid rgba(122, 74, 58, 0.35);
-  border-radius: 999px;
-  background: rgba(255, 253, 247, 0.82);
-}
-
-.menu-entry-navigation a:hover,
-.menu-entry-navigation a:focus-visible,
-.catalog-pagination a:hover {
-  text-decoration: underline;
-}
-
-.menu-entry-navigation a:focus-visible,
-.catalog-pagination a:focus-visible {
-  outline: 2px solid var(--choc-soft);
-  outline-offset: 2px;
-}
-
-.catalog-document {
-  width: min(100% - 2rem, 760px);
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.catalog-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
-  font-size: 0.75rem;
-}
-
-.catalog-page-nav {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  margin: 0 0 0.6rem;
-  font-size: 0.75rem;
-}
-
-.catalog-page-nav a,
-.catalog-page-disabled {
-  display: inline-flex;
-  min-height: 2rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(122, 74, 58, 0.35);
-  border-radius: 8px;
-  background: rgba(255, 253, 247, 0.85);
-}
-
-.catalog-page-nav a:first-child { justify-self: start; }
-.catalog-page-nav a:last-child,
-.catalog-page-disabled { justify-self: end; }
-
-.catalog-page-nav .catalog-current {
-  display: grid;
-  width: 2rem;
-  height: 2rem;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--choc);
-  color: #fff;
-  font-weight: 700;
-}
-
-.catalog-page-disabled {
-  color: var(--choc-soft);
-  opacity: 0.55;
-}
-
-.catalog-sheet {
-  padding: clamp(1rem, 4vw, 2rem);
-  border: 1px solid rgba(122, 74, 58, 0.18);
-  border-radius: 12px;
-  background: rgba(255, 253, 247, 0.92);
-  box-shadow: 0 14px 36px rgba(74, 31, 18, 0.12);
-  transform-origin: left center;
-  backface-visibility: hidden;
-  animation: menu-page-flip 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
-}
-
-.flavor-sheet {
-  transform-origin: left center;
-  backface-visibility: hidden;
-  animation: menu-page-flip 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
-}
-
-@keyframes menu-page-flip {
-  from {
-    opacity: 0.55;
-    transform: perspective(1100px) rotateY(-78deg);
-  }
-  70% {
-    opacity: 1;
-    transform: perspective(1100px) rotateY(7deg);
-  }
-  to {
-    opacity: 1;
-    transform: perspective(1100px) rotateY(0);
-  }
-}
-
-.catalog-title {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.catalog-title h1,
-.catalog-category h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 1.05;
-}
-
-.catalog-title h1 { font-size: clamp(1.8rem, 7vw, 2.7rem); }
-
-.catalog-kicker {
-  margin-bottom: 0.25rem;
-  color: var(--choc-soft);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.catalog-category + .catalog-category {
-  margin-top: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(122, 74, 58, 0.2);
-}
-
-.catalog-category h2 {
-  margin-bottom: 0.35rem;
-  font-size: 1.35rem;
-}
-
-.catalog-category-note {
-  margin-bottom: 0.35rem;
-  color: var(--choc-soft);
-  font-size: 0.66rem;
-  font-style: italic;
-}
-
-.catalog-prices {
-  margin-bottom: 0.15rem;
-  color: var(--choc-soft);
-  font-size: 0.62rem;
-  text-align: right;
-}
-
-.catalog-list { list-style: none; }
-
-.catalog-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.4rem 0;
-  border-bottom: 1px dashed rgba(122, 74, 58, 0.28);
-}
-
-.catalog-row:last-child { border-bottom: 0; }
-.catalog-copy { min-width: 0; }
-.catalog-name { display: block; font-size: 0.88rem; font-weight: 600; }
-
-.catalog-marathi {
-  margin-left: 0.2rem;
-  color: var(--choc-soft);
-  font-family: system-ui, "Noto Sans Devanagari", sans-serif;
-  font-size: 0.82em;
-  font-weight: 500;
-}
-
-.catalog-description {
-  display: block;
-  margin-top: 0.05rem;
-  color: var(--choc-soft);
-  font-size: 0.65rem;
-  line-height: 1.3;
-}
-
-.catalog-price {
-  white-space: nowrap;
-  font-family: "Poppins", "Noto Sans", "Segoe UI", "Segoe UI Symbol", Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  text-align: right;
-}
-
-.catalog-price small {
-  font-family: inherit;
-  font-size: 0.72em;
-  font-weight: 500;
-}
-
-.orderable-row { grid-template-columns: minmax(0, 1fr) auto; }
-
-.order-actions {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.3rem;
-  justify-items: end;
-}
-
-.order-option {
-  max-width: 10rem;
-  min-width: 0;
-  padding: 0.3rem 0.35rem;
-  border: 1px solid rgba(122, 74, 58, 0.35);
-  border-radius: 6px;
-  background: #fff;
-  color: var(--choc);
-  font: 500 0.7rem var(--font-body);
-}
-
-.add-to-order,
-.place-order-button {
-  border: 1px solid var(--choc);
-  border-radius: 999px;
-  background: var(--choc);
-  color: #fff;
-  font: 600 0.7rem var(--font-body);
-  cursor: pointer;
-}
-
-.add-to-order { padding: 0.35rem 0.55rem; white-space: nowrap; }
-.add-to-order:hover,
-.place-order-button:hover { background: #6a3523; }
-.add-to-order:focus-visible,
-.place-order-button:focus-visible,
-.order-summary-controls button:focus-visible,
-.order-cart-link:focus-visible {
-  outline: 3px solid #d59b71;
-  outline-offset: 2px;
-}
-
-.add-to-order:disabled,
-.place-order-button:disabled { opacity: 0.55; cursor: not-allowed; }
-
-.flavor-columns.orderable-columns,
-.flavor-row.orderable-row {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-}
-
-.flavor-columns.orderable-columns span:last-child { text-align: right; }
-.flavor-row.orderable-row .order-actions { width: 100%; }
-
-.order-status {
-  margin: 0.45rem 0;
-  padding: 0.45rem 0.6rem;
-  border-radius: 6px;
-  background: #e8f5e9;
-  color: #24552b;
-  font-size: 0.75rem;
-}
-
-.order-status.is-error {
-  background: #fff0ed;
-  color: #8a261b;
-}
-
-.order-cart-link {
-  position: fixed;
-  right: 0.8rem;
-  bottom: 0.8rem;
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 999px;
-  background: var(--choc);
-  box-shadow: 0 4px 14px rgba(74, 31, 18, 0.25);
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.order-cart-count {
-  display: grid;
-  min-width: 1.3rem;
-  height: 1.3rem;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--choc);
-  font-size: 0.7rem;
-}
-
-.order-document {
-  width: min(100% - 2rem, 760px);
-  margin: 0 auto;
-  padding: 1rem 0 2rem;
-}
-
-.order-page-navigation {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
-}
-
-.order-page-navigation a {
-  color: var(--choc);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.order-page-navigation a:hover { text-decoration: underline; }
-
-.order-sheet {
-  padding: clamp(1rem, 4vw, 2rem);
-  border: 1px solid rgba(122, 74, 58, 0.18);
-  border-radius: 12px;
-  background: rgba(255, 253, 247, 0.94);
-  box-shadow: 0 14px 36px rgba(74, 31, 18, 0.12);
-}
-
-.order-heading { margin-bottom: 1rem; text-align: center; }
-.order-heading h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 7vw, 2.7rem); }
-.order-empty { margin: 0.8rem 0; color: var(--choc-soft); }
-.order-summary-list { list-style: none; }
-
-.order-summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.7rem 0;
-  border-bottom: 1px dashed rgba(122, 74, 58, 0.28);
-}
-
-.order-summary-details { display: grid; gap: 0.15rem; }
-.order-summary-details strong { font-size: 0.9rem; }
-.order-summary-details span { color: var(--choc-soft); font-size: 0.72rem; }
-.order-summary-controls { display: flex; align-items: center; gap: 0.35rem; }
-
-.order-summary-controls button {
-  min-width: 1.8rem;
-  min-height: 1.8rem;
-  border: 1px solid rgba(122, 74, 58, 0.35);
-  border-radius: 6px;
-  background: #fff;
-  color: var(--choc);
-  font: 600 0.8rem var(--font-body);
-  cursor: pointer;
-}
-
-.order-summary-controls .order-remove {
-  width: auto;
-  padding: 0 0.45rem;
-  color: #8a261b;
-  font-size: 0.65rem;
-}
-
-.order-total {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.8rem 0 1.25rem;
-  padding-top: 0.7rem;
-  border-top: 2px solid rgba(122, 74, 58, 0.3);
-  font-size: 1.05rem;
-}
-
-.order-total strong,
-.order-summary-details { font-variant-numeric: tabular-nums; }
-
-.order-form { display: grid; gap: 0.45rem; }
-.order-form h2 { margin-bottom: 0.3rem; font-family: var(--font-display); font-size: 1.3rem; }
-.order-form label { font-size: 0.78rem; font-weight: 600; }
-
-.order-form input,
-.order-form select,
-.order-form textarea {
-  width: 100%;
-  padding: 0.6rem;
-  border: 1px solid rgba(122, 74, 58, 0.4);
-  border-radius: 6px;
-  background: #fff;
-  color: var(--choc);
-  font: 500 0.85rem var(--font-body);
-}
-
-.order-form .order-confirmation { display: flex; align-items: flex-start; gap: 0.55rem; cursor: pointer; }
-.order-form .order-confirmation input {
-  width: 1rem;
-  height: 1rem;
-  flex: 0 0 auto;
-  margin: 0.08rem 0 0;
-  padding: 0;
-  accent-color: var(--choc);
-}
-.order-form .order-confirmation input:focus-visible { outline: 2px solid var(--choc); outline-offset: 2px; }
-.order-form .order-confirmation span { line-height: 1.4; }
-.order-confirmation-note { margin: 0.35rem 0; color: var(--choc-soft); font-size: 0.72rem; }
-.place-order-button { min-height: 2.6rem; padding: 0.6rem 1rem; }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { transition: none; opacity: 1; transform: none; }
-  .btn { transition: none; }
-  .treat-track { animation: none; }
-  .treat-group[aria-hidden="true"] { display: none; }
-  .catalog-sheet,
-  .flavor-sheet { animation: none; transform: none; }
-}
-
-@media (max-width: 600px) {
-  .menu-document {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: min(100% - 1rem, 900px);
-    min-height: 100svh;
-    padding: 0.4rem 0;
-  }
-  .menu-back { margin-bottom: 0.4rem; font-size: 0.75rem; }
-  .flavor-sheet { padding: 0.7rem; }
-  .menu-entry-navigation { margin-bottom: 0.45rem; }
-  .flavor-heading { margin-bottom: 0.4rem; }
-  .flavor-heading h1 { font-size: clamp(1.65rem, 7vw, 2rem); }
-  .flavor-heading p { margin-top: 0.15rem; font-size: 0.6rem; }
-  .flavor-columns,
-  .flavor-row { grid-template-columns: minmax(0, 1fr) 3.1rem 3.6rem; gap: 0.15rem; }
-  .flavor-columns { min-height: 2rem; font-size: 0.58rem; }
-  .flavor-row { min-height: 1.3rem; font-size: 0.64rem; }
-  .flavor-marathi { margin-left: 0.15rem; }
-  .menu-note { margin-top: 0.45rem; font-size: 0.58rem; }
-}
-
-@media (max-width: 600px) {
-  .catalog-document {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: min(100% - 1rem, 760px);
-    min-height: 100svh;
-    padding: 0.4rem 0;
-  }
-
-  .catalog-page-nav { margin: 0 0 0.4rem; font-size: 0.68rem; }
-  .catalog-page-nav a,
-  .catalog-page-disabled { min-height: 1.8rem; padding: 0.3rem 0.5rem; }
-  .catalog-page-nav .catalog-current { width: 1.8rem; height: 1.8rem; }
-  .catalog-sheet { padding: 0.75rem; }
-  .catalog-title { margin-bottom: 0.55rem; }
-  .catalog-title h1 { font-size: clamp(1.55rem, 6vw, 2rem); }
-  .catalog-category + .catalog-category { margin-top: 0.55rem; padding-top: 0.45rem; }
-  .catalog-category h2 { margin-bottom: 0.2rem; font-size: 1.1rem; }
-  .catalog-category-note { margin-bottom: 0.2rem; font-size: 0.6rem; }
-  .catalog-row { gap: 0.45rem; padding: 0.28rem 0; }
-  .catalog-name { font-size: 0.76rem; }
-  .catalog-description { font-size: 0.58rem; }
-  .catalog-price { font-size: 0.8rem; }
-  .catalog-prices { font-size: 0.55rem; }
-  .orderable-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.3rem; }
-  .order-actions { gap: 0.2rem; }
-  .order-option { max-width: 7rem; width: 100%; padding: 0.25rem; font-size: 0.6rem; }
-  .add-to-order { padding: 0.3rem 0.4rem; font-size: 0.62rem; }
-  .catalog-document,
-  .menu-document { padding-bottom: 4rem; }
-  .order-document { width: min(100% - 1rem, 760px); padding: 0.4rem 0 1rem; }
-  .order-sheet { padding: 0.75rem; }
-  .order-summary-row { align-items: flex-start; gap: 0.4rem; }
-  .order-summary-controls { gap: 0.2rem; }
-  .order-summary-controls button { min-width: 1.65rem; min-height: 1.65rem; }
-  .order-summary-controls .order-remove { padding: 0 0.3rem; }
-}
-
-@media (max-width: 360px) {
-  .flavor-name { white-space: normal; }
-  .catalog-row { gap: 0.25rem; }
-  .catalog-name { font-size: 0.7rem; }
-  .catalog-price { font-size: 0.74rem; }
-  .menu-entry-navigation { gap: 0.5rem; }
-  .menu-entry-navigation a { padding: 0.35rem 0.65rem; font-size: 0.7rem; }
-  .flavor-sheet { padding: 0.55rem; }
-  .flavor-heading { margin-bottom: 0.3rem; }
-  .flavor-heading h1 { font-size: 1.5rem; }
-  .flavor-heading p { font-size: 0.52rem; }
-  .flavor-columns,
-  .flavor-row { grid-template-columns: minmax(0, 1fr) 2.8rem 3.2rem; gap: 0.1rem; }
-  .flavor-columns { min-height: 1.7rem; font-size: 0.52rem; }
-  .flavor-row { min-height: 1.15rem; font-size: 0.58rem; }
-  .menu-note { margin-top: 0.3rem; font-size: 0.53rem; }
-  .catalog-document { padding: 0.15rem 0 4rem; }
-  .catalog-sheet { padding: 0.55rem; }
-  .catalog-title { margin-bottom: 0.35rem; }
-  .catalog-title h1 { font-size: 1.45rem; }
-  .catalog-category + .catalog-category { margin-top: 0.3rem; padding-top: 0.3rem; }
-  .catalog-category h2 { font-size: 0.98rem; }
-  .catalog-category-note { margin-bottom: 0.12rem; }
-  .catalog-row { padding: 0.16rem 0; }
-  .catalog-name { font-size: 0.66rem; }
-  .catalog-description { font-size: 0.52rem; line-height: 1.15; }
-  .catalog-prices { font-size: 0.5rem; }
-  .orderable-row { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
-  .order-option { font-size: 0.55rem; }
-  .add-to-order { padding: 0.25rem 0.32rem; font-size: 0.56rem; }
-  .order-cart-link { right: 0.45rem; bottom: 0.45rem; padding: 0.5rem 0.7rem; }
-  .order-document { padding: 0.15rem 0 1rem; }
-  .order-summary-details strong { font-size: 0.78rem; }
-  .order-summary-details span { font-size: 0.62rem; }
-}
-
-@media (max-width: 600px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100svh;
-    height: auto;
-  }
-
-  .home {
-    min-height: 0;
-    padding: 1rem 1rem 0.5rem;
-  }
-
-  .brand { font-size: clamp(2rem, 10vw, 2.6rem); }
-
-  .btn {
-    margin-top: 1.1rem;
-    padding: 0.65rem 1.6rem;
-  }
-
-  .treat-marquee { margin-top: 0.75rem; }
-  .treat-group { gap: 0.5rem; padding-right: 0.5rem; }
-  .treat-group img {
-    width: clamp(76px, 20vw, 96px);
-    height: clamp(90px, 24vw, 110px);
-  }
-
-  .shop-image-wrap { margin-top: 0.5rem; }
-  .shop-image { border-width: 5px; }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>House of Ice-Cream, Atpadi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="home">
+    <h1 class="brand" aria-label="House of Ice-Cream, Atpadi">
+      <span class="line line-1"><span class="big">House</span> of</span>
+      <span class="line line-2">Ice-Cream Atpadi</span>
+    </h1>
+
+    <h2 class="showcase-heading">Top Rated Products — Must Try</h2>
+    <div class="home-showcase">
+      <div class="showcase-box">
+        <div class="showcase-images" aria-hidden="true">
+          <img src="images/green_cone.png" alt="">
+          <img src="images/pink_cone.png" alt="">
+          <img src="images/yellow_cone.png" alt="">
+        </div>
+        <div class="showcase-products">
+          <div class="showcase-item">
+            <span class="showcase-name">Pista Delight</span>
+            <span class="showcase-price">₹60</span>
+          </div>
+          <div class="showcase-item">
+            <span class="showcase-name">Strawberry Scoop</span>
+            <span class="showcase-price">₹55</span>
+          </div>
+          <div class="showcase-item">
+            <span class="showcase-name">Mango Magic</span>
+            <span class="showcase-price">₹60</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn" href="menu.html">View Menu <span class="navigation-marathi" lang="mr">मेनू पहा</span></a>
+
+    <div class="treat-marquee" aria-label="Ice cream cones, glasses, and cups">
+      <div class="treat-track">
+        <div class="treat-group">
+          <img src="images/green_cone.png" alt="Green ice cream cone">
+          <img src="images/glass2.png" alt="Ice cream glass">
+          <img src="images/cup3.png" alt="Ice cream cup">
+          <img src="images/pink_cone.png" alt="Pink ice cream cone">
+          <img src="images/glass1.png" alt="Ice cream glass">
+          <img src="images/cup2.png" alt="Ice cream cup">
+          <img src="images/yellow_cone.png" alt="Yellow ice cream cone">
+          <img src="images/glass3.png" alt="Ice cream glass">
+          <img src="images/cup1.png" alt="Ice cream cup">
+        </div>
+        <div class="treat-group" aria-hidden="true">
+          <img src="images/green_cone.png" alt="">
+          <img src="images/glass2.png" alt="">
+          <img src="images/cup3.png" alt="">
+          <img src="images/pink_cone.png" alt="">
+          <img src="images/glass1.png" alt="">
+          <img src="images/cup2.png" alt="">
+          <img src="images/yellow_cone.png" alt="">
+          <img src="images/glass3.png" alt="">
+          <img src="images/cup1.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <section class="shop-image-wrap" aria-label="Ice cream shop photo">
+      <img src="images/shop1.png" alt="House of Ice-Cream shop" class="shop-image">
+    </section>
+
+    <div class="contact-message-strip" role="region" aria-label="सोशल मीडिया सूचना">
+      <span lang="mr">आमच्याशी संपर्क साधण्यासाठी WhatsApp आयकॉनवर क्लिक करा.</span>
+      <span lang="mr">नवीन ऑफरसाठी आम्हाला Instagram वर फॉलो करा.</span>
+      <span lang="mr">Google वर तुमचे अमूल्य रेटिंग द्या, जेणेकरून आम्ही तुम्हाला सदैव सर्वोत्तम सेवा देऊ शकू.</span>
+      <span lang="mr">डिजिटल मेनू कार्ड कसे वापरावे हे पाहण्यासाठी YouTube वर क्लिक करा.</span>
+    </div>
+
+    <div class="social-icons" role="group" aria-label="Social media icons">
+      <a class="social-contact" href="https://wa.me/917558610088" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 7558610088">
+        <span class="social-icon whatsapp-icon" aria-hidden="true">
+          <img src="images/whatsapp.png" alt="">
+        </span>
+      </a>
+      <a class="social-icon instagram-icon" href="https://www.instagram.com/house_of_ice_cream_atpadi?exln=MTM2d2lxbG9vYTNldw==" target="_blank" rel="noopener noreferrer">
+        <img src="images/Instagram.png" alt="Instagram">
+      </a>
+      <span class="social-icon google-icon">
+        <img src="images/google.png" alt="Google">
+      </span>
+      <a class="social-icon youtube-icon" href="https://youtube.com/@bytee_nova?si=XXOdDmDfrM8ZX5V7" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" role="img" aria-label="YouTube">
+          <rect x="1" y="4" width="22" height="16" rx="5" fill="#ff0000"></rect>
+          <path d="M10 8.5v7l6-3.5z" fill="#fff"></path>
+        </svg>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
